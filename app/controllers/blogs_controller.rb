@@ -69,8 +69,8 @@ class BlogsController < ApplicationController
   end
 
   def confirm
-    binding.pry
     @blog = current_user.blogs.new(blog_params)
+    binding.pry
     render :new if @blog.invalid?
   end
 
@@ -83,7 +83,7 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:image, :content, :image_cashe)
+      params.require(:blog).permit(:image, :content, :image_cache)
     end
 
     def must_logged_in
