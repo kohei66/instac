@@ -1,0 +1,11 @@
+<h1>このユーザーのお気に入り写真一覧は下記の通り</h1>
+<% no = 1 %>
+  <% @favorite_blogs.each do |favorite| %>
+    <span>
+      <span class="btn btn-success">No.<%= no %></p>
+      <% no += 1 %>
+        <p class="btn btn-primary">写真：<%= image_tag favorite.blog.image %></p>
+        <span class="btn btn-primary">内容：<%= favorite.blog.content %></span>
+      </span>
+
+    <% end %>

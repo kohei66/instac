@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blogs</h1>
+<h1>Instacs</h1>
 
 <table>
   <thead>
@@ -14,11 +14,11 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= blog.image %></td>
+        <td><%= image_tag blog.image.thumb %></td>
         <td><%= blog.content %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="btn btn-primary"><%= link_to 'Show', blog %></td>
+        <td class="btn btn-success"><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td class="btn btn-warning"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
+<%= link_to 'New Instac', new_blog_path %>
