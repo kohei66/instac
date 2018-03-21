@@ -17,8 +17,10 @@
         <td><%= image_tag blog.image.thumb %></td>
         <td><%= blog.content %></td>
         <td class="btn btn-primary"><%= link_to 'Show', blog %></td>
-        <td class="btn btn-success"><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td class="btn btn-warning"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if blog.user == current_user %>
+          <td class="btn btn-success"><%= link_to 'Edit', edit_blog_path(blog) %></td>
+          <td class="btn btn-warning"><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
